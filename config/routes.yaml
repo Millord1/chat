@@ -5,7 +5,10 @@ controllers:
     type: attribute
 
 
-users:
-    path: /users
-    controller: App\Controller\UserController::test
-    methods: [GET]
+register:
+    path: /user/register
+    controller: App\Controller\UserLoginController::register
+    methods: ['POST']
+
+api_login_check:
+    path: /api/login_check
