@@ -1,0 +1,26 @@
+App\Entity\User:
+  properties:
+    username:
+      - NotBlank: ~
+      - NotNull: ~ 
+      - NoSuspiciousCharacters: ~
+      - Regex:
+          pattern: '/^[a-z]+$/i'
+      - Length:
+          min: 2
+          max: 50
+          minMessage: 'Your first name must be at least {{ limit }} characters long'
+          maxMessage: 'Your first name cannot be longer than {{ limit }} characters'
+    email:
+      - NotBlank: ~ 
+      - NotNull: ~ 
+      - Email: ~ 
+      - NoSuspiciousCharacters: ~
+      - Length: 
+          min: 10
+          max: 180
+    password:
+      - NotBlank: ~ 
+      - NotNull: ~ 
+      - NotCompromisedPassword: ~ 
+      - PasswordStrength: ~ 
